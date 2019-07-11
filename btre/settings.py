@@ -142,13 +142,7 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
-# Email Config
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'qmillothemaker2@gmail.com'
-EMAIL_HOST_PASSWORD = '_Testing1337'
-EMAIL_USE_TLS = True
-
+# To work on production server
 try:
     from .local_settings import *
 except ImportError:
