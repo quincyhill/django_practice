@@ -149,3 +149,8 @@ EMAIL_HOST_USER = 'qmillothemaker2@gmail.com'
 EMAIL_HOST_PASSWORD = '_Testing1337'
 EMAIL_USE_TLS = True
 
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
