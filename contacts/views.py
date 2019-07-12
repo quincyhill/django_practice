@@ -31,15 +31,18 @@ def contact(request):
         contact.save()
 
 
-        # Send mail
-        send_mail(
-            'Property listing Inquiry',
-            'There has been an inquiry for '+listing+'. Sign into the admin panel for more info',
-            'qmillothemaker2@gmail.com',
-            [realtor_email,'therealquincyhill@gmail.com'],
-            fail_silently=False
-        )
+
+
+        # # Temporarily disable sending mail because it always seems to throw errors
+        # # Send mail
+        # send_mail(
+        #     'Property listing Inquiry',
+        #     'There has been an inquiry for '+listing+'. Sign into the admin panel for more info',
+        #     'qmillothemaker2@gmail.com',
+        #     [realtor_email,'therealquincyhill@gmail.com'],
+        #     fail_silently=False
+        # )
 
         # messages.success(request,'Your request has been submitted, a realtor will get back to you soon')
-        messages.success(request,'Thank you: ' +name+ ', Your inquiry has been sent')
+        messages.success(request,'Thank you: ' +name+ ', Your inquiry has been sent but no email will be sent to the parties involved')
         return redirect('/listings/'+listing_id)
